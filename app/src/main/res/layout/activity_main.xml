@@ -25,14 +25,27 @@
         android:id="@+id/nextActivityBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="252dp"
         android:text="Next Activity"
         android:textStyle="bold"
         android:typeface="serif"
         app:cornerRadius="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/openWebpageBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open Webpage"
+        android:textStyle="bold"
+        android:typeface="serif"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/nextActivityBtn"
+        app:layout_constraintStart_toStartOf="@+id/nextActivityBtn"
+        app:layout_constraintTop_toBottomOf="@+id/nextActivityBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

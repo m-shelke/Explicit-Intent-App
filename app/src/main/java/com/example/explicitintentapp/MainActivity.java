@@ -1,6 +1,7 @@
 package com.example.explicitintentapp;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.Button;
 
@@ -9,6 +10,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
         //Intents type: 1. Explicit Intent 2. Implicit Intent
 
         //XML Button
-        Button nextActivityBtn = findViewById(R.id.nextActivityBtn);
+        MaterialButton nextActivityBtn = findViewById(R.id.nextActivityBtn);
 
         //clickListener on XML Button
         nextActivityBtn.setOnClickListener(v->{
@@ -36,7 +39,13 @@ public class MainActivity extends AppCompatActivity {
             goToSecondActivity();
         });
 
+        MaterialButton openWebpage = findViewById(R.id.openWebpageBtn);
 
+        //Handling click event on XML Button
+        openWebpage.setOnClickListener(v -> {
+            //calling method
+            openUri();
+        });
     }
 
     //creating method for Explicit Intent
@@ -44,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
         //Intent class, and other parameter (Current Activity Context,Target Activity Context)
         Intent intent = new Intent(this,SecondActivity.class);
         //calling startActivity() method
+        startActivity(intent);
+    }
+
+    public void openUri(){
+        //Uniform Resource Identifier for finding Web Address
+        Uri webPage = Uri.parse("https://webgradients.com/");
+        //Intent class with some parameter
+        Intent intent = new Intent(Intent.ACTION_VIEW,webPage);
+        //startActivity with intent obj
         startActivity(intent);
     }
 }
